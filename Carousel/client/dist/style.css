@@ -1,0 +1,296 @@
+.g-btn,
+.g-btn:active,
+.g-btn:focus,
+.g-btn:hover {
+  display: inherit;
+  padding: 0;
+  border: none;
+  text-align: inherit;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#g-carousels {
+  font-family: "Noto Sans";
+  font-size: 16px;
+  width: 97vw;
+  max-width: 1200px;
+  min-width: 400px;
+  height: auto;
+  margin: 4rem auto;
+  color: #111;
+  line-height: 1.5;
+}
+#g-carousels .g-carousel-title {
+  line-height: 1.3334;
+  letter-spacing: -0.5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.875rem;
+  border-top: 1px solid #ccc;
+  margin-bottom: 1.5rem;
+  padding-top: 3rem;
+}
+#g-carousels .g-carousel-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom: 3rem;
+  width: 100%;
+  height: auto;
+}
+#g-carousels .g-carousel-container .g-arrow-holder {
+  min-width: 5rem;
+  min-height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#g-carousels .g-carousel-container .g-arrow-holder .g-arrow {
+  position: absolute;
+  z-index: 3;
+  min-width: 5rem;
+  min-height: 5rem;
+  background-size: 1.5rem;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+#g-carousels .g-carousel-container .g-arrow-holder .g-arrow.g-left {
+  grid-area: left;
+  background-image: url("./res/arrow-left.svg");
+}
+#g-carousels .g-carousel-container .g-arrow-holder .g-arrow.g-right {
+  grid-area: right;
+  background-image: url("./res/arrow-right.svg");
+}
+#g-carousels .g-carousel-container .g-arrow-holder .g-arrow-fill {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  transform: scale(0);
+  min-width: 3rem;
+  min-height: 3rem;
+  transition-property: transform, background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0, 1);
+}
+#g-carousels .g-carousel-container .g-arrow-holder:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+#g-carousels .g-carousel-container .g-arrow-holder:focus:enabled .g-arrow-fill,
+#g-carousels .g-carousel-container .g-arrow-holder:hover:enabled .g-arrow-fill {
+  background-color: #dfdfdf;
+  transform: scale(1);
+  z-index: 1;
+}
+#g-carousels .g-carousel-container .g-arrow-holder:active:enabled .g-arrow-fill {
+  transform: scale(0.8333);
+  background-color: #ccc;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider.g-animate-close {
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  animation: g-carousel-slide-close 0.6s forwards;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider.g-animate-loose {
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  animation: g-carousel-slide-loose 0.6s forwards;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container:hover .g-item-image {
+  transform: scale(1.02);
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container:hover .g-item-name {
+  text-decoration: underline;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container {
+  display: block;
+  height: auto;
+  width: 25%;
+  padding: 0 2%;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container .g-item-image-holder {
+  width: 100%;
+  height: auto;
+  display: flex;
+  grid-area: image;
+  justify-content: center;
+  align-items: center;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container .g-item-image-holder .g-item-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s ease-out;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container .g-new-item {
+  background-color: #ca5007;
+  font-weight: bold;
+  color: #fff;
+  width: fit-content;
+  font-size: 0.75rem;
+  padding: 0 0.3rem;
+  border-radius: 0.8rem;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container .g-item-fam-price {
+  font-size: 0.75rem;
+  font-weight: bold;
+  background-color: #0077c8;
+  color: #fff;
+  width: fit-content;
+  padding: 0.2rem 0.5rem;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container .g-item-name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container .g-item-desc {
+  font-weight: normal;
+  line-height: 1;
+  font-size: 0.875rem;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container .g-item-price {
+  font-weight: bold;
+  line-height: 1;
+  width: fit-content;
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container .g-item-sale {
+  background-color: #ffce00;
+  box-shadow: #ef4123 2px 2px 0px;
+  width: fit-content;
+  padding: 0.2rem 0.5rem;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container .g-item-stars {
+  display: inline-block;
+  position: relative;
+  margin-top: 4px;
+  width: 6rem;
+  height: 1.2rem;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container .g-item-stars .g-item-empty-stars {
+  width: 100%;
+  height: auto;
+  background: url("./res/empty-star.svg") repeat-x;
+  background-size: 1.2rem;
+  position: absolute;
+  z-index: 2;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container .g-item-stars .g-item-full-stars {
+  background: url("./res/full-star.svg") repeat-x;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  background-size: 1.2rem;
+  z-index: 3;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container .g-item-rating {
+  padding-left: 0.3rem;
+  display: inline-block;
+  font-size: 1rem;
+}
+#g-carousels .g-carousel-container .g-item-slider-outer .g-item-slider .g-item-container .g-item-more {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: normal;
+}
+
+#g-footer-container {
+  box-sizing: border-box;
+  width: calc(100vw - 8px);
+  max-width: calc(100vw - 15px);
+  font-family: "Noto Sans";
+  background-color: #0058a3;
+  color: #fff;
+  display: block;
+  padding: 1rem;
+  z-index: 500;
+}
+#g-footer-container .g-footer-linklist {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+#g-footer-container .g-footer-linklist .g-footer-linklist-column {
+  width: 25%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 1rem;
+  margin-top: 2rem;
+  justify-content: left;
+}
+#g-footer-container .g-footer-linklist .g-footer-linklist-column .g-footer-linklist-heading {
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  line-height: 2rem;
+}
+#g-footer-container .g-footer-linklist .g-footer-linklist-column .g-footer-linklist-heading .g-footer-icon {
+  outline-color: #fff;
+  fill: #fff;
+  color: #fff;
+  margin-right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+}
+#g-footer-container .g-footer-linklist .g-footer-linklist-column .g-footer-linklist-heading .g-footer-heading-title {
+  display: inline;
+  white-space: nowrap;
+}
+#g-footer-container .g-footer-linklist .g-footer-linklist-column .g-footer-linklist-link {
+  line-height: 2rem;
+}
+#g-footer-container .g-footer-linklist .g-footer-linklist-column .g-footer-linklist-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+#g-footer-container .g-footer-social {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+#g-footer-container .g-footer-social .g-footer-social-link {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  line-height: 2rem;
+}
+#g-footer-container .g-footer-social .g-footer-social-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+#g-footer-container .g-footer-social .g-footer-social-link .g-footer-icon {
+  outline-color: #fff;
+  fill: #fff;
+  color: #fff;
+  margin-right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+}
+#g-footer-container .aw-b-g-m-t-credits {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
