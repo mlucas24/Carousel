@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const faker = require("faker");
 
 const productSchema = new mongoose.Schema({
   id: { type: Number, required: true, index: true },
@@ -11,9 +12,7 @@ const productSchema = new mongoose.Schema({
   hasOptions: Boolean,
   isFamilyPriced: Boolean,
   isOnSale: Boolean,
-  isNewItem: Boolean,
-  loose: [Number],
-  close: [Number],
+  isNewItem: Boolean
 });
 
-module.exports = mongoose.model('Product', productSchema);
+module.exports = mongoose.model("Product", productSchema, "products");
