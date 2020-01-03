@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./server/server.js",
+    "start": "nodemon ./server/server.js",
     "client": "webpack-dev-server --open --inline --mode development --devtool inline-source-map",
-    "server": "nodemon ./server/index.js",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
