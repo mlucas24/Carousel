@@ -62,3 +62,7 @@ server.patch("/reviews/update", (req, res) => {
 });
 
 module.exports = server;
+
+server.listen(3030, () => {
+  console.log(`Carousels Service listening on port ${3030}`);
+});
